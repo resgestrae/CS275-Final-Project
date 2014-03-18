@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/boarders"
+    android:orientation="vertical"
+    android:padding="7dp" >
+
+    
+    		<TextView
+    		    android:id="@+id/dayTV"
+    		    android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:text="Monday" />
+                
+            <TextView
+                android:id="@+id/classNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dayTV"
+                android:text="CS 275"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+            
+
+            <TextView
+                android:id="@+id/classTimeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="2:00 - 3:20"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/buildingNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/classNameTV"
+                android:text="University Crossings"
+                android:textSize="14sp"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/roomNumTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/buildingNameTV"
+                android:layout_toRightOf="@+id/buildingNameTV"
+                android:paddingLeft="7dp"
+                android:text="151"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+</RelativeLayout>
