@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nestbackground"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainMenuActivity" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/image_content"
+        android:src="@drawable/nestborderlogo" />
+
+    <RelativeLayout
+        android:id="@+id/menuListLayout"
+        android:layout_width="250dp"
+        android:layout_height="325dp"
+        android:layout_above="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/classScheduleTV"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:background="@drawable/boarders"
+            android:text="Class Schedule"
+            android:textColor="#42311D"
+            android:textSize="30sp"
+            android:typeface="serif"
+            />
+
+
+        <TextView
+            android:id="@+id/septaTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/classScheduleTV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:background="@drawable/boarders"
+            android:text="Septa"
+            android:textColor="#42311D"
+            android:textSize="30sp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/plannerTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/septaTV"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:background="@drawable/boarders"
+            android:layout_marginTop="30dp"
+            android:text="Planner"
+            android:textColor="#42311D"
+            android:textSize="30sp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/campusMapTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/plannerTV"
+            android:gravity="center"
+            android:background="@drawable/boarders"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="CampusMap"
+            android:textColor="#42311D"
+            android:textSize="30sp"
+            android:typeface="serif" />
+    </RelativeLayout>
+
+</RelativeLayout>
