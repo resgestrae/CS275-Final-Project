@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="10dp"
+    android:background="@drawable/nestbackground" >
+    
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp" >
+
+<!-- /**************** CLASS PROMPT *****************/ -->
+
+   <RelativeLayout
+       android:id="@+id/classLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:background="@drawable/boarders" 
+       android:layout_margin="10dp" >
+       
+       <EditText
+        android:id="@+id/classEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/classTextView"
+        android:ems="10"
+        android:maxLength="20"
+        android:textSize="15sp"
+        android:hint="@string/classnameHint"
+        android:background="@null"
+        android:inputType="text"
+        android:typeface="serif"
+        android:paddingLeft="110dp">
+        <requestFocus />
+    </EditText>
+    
+    <TextView
+        android:id="@+id/classTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:text="@string/classPrompt"
+        android:typeface="serif"
+        android:textColor="#42311D"
+        android:textSize="20sp" />
+    </RelativeLayout>
+<!-- /**************** BUILDING PROMPT *****************/   -->
+   <RelativeLayout
+       android:id="@+id/buildingLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/classLayout"
+       android:background="@drawable/boarders" 
+       android:layout_margin="10dp" >
+
+	<Spinner 
+	    android:id="@+id/buildingSpinner"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_centerVertical="true"
+	    android:background="@null"
+	    android:paddingLeft="110dp" 
+	    />  
+
+    
+    <TextView
+        android:id="@+id/buildingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buildingSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:text="@string/buildingPrompt"
+        android:typeface="serif"
+        android:textColor="#42311D"
+        android:textSize="20sp" />
+    </RelativeLayout>
+    <!-- /******************* ROOM NUM PROMPT *********************/ -->
+   <RelativeLayout
+       android:id="@+id/roomNumLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/buildingLayout"
+       android:background="@drawable/boarders" 
+       android:layout_margin="10dp" >    
+    
+    <EditText
+        android:id="@+id/roomNumEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toRightOf="@+id/roomNumTextView"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:ems="10"
+        android:maxLength="20"
+        android:textSize="15sp"
+        android:hint="@string/roomNumHint"
+        android:inputType="text"
+        android:typeface="serif"
+        android:paddingLeft="110dp">
+        <requestFocus />
+    </EditText>
+    
+    <TextView
+        android:id="@+id/roomNumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/roomNumEditText"
+        android:layout_alignBottom="@+id/roomNumEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:text="@string/roomNumPrompt"
+        android:typeface="serif"
+        android:textColor="#42311D"
+        android:textSize="20sp" />
+    </RelativeLayout>
+    
+<!--  /**************** DAY(S) OF WEEK PROMPT *****************/  -->  
+   <RelativeLayout
+       android:id="@+id/dayLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/roomNumLayout"
+       android:background="@drawable/boarders" 
+       android:paddingTop="10dp"
+       android:paddingBottom="10dp"
+       android:layout_margin="10dp" >
+        
+        <TextView
+        	android:id="@+id/dayTextView"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:layout_alignParentTop="true"
+        	android:paddingLeft="10dp"
+        	android:text="@string/dayPrompt1"
+        	android:textSize="20sp"
+        	android:textColor="#42311D"
+        	android:typeface="serif" />
+        
+            
+        	<CheckBox
+                android:id="@+id/monCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:layout_below="@+id/dayTextView"
+				android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/monday"
+                android:textColor="#42311D"
+                android:typeface="serif"
+                android:onClick="getCheckedItem"
+                 />
+
+            <CheckBox
+                android:id="@+id/tuesCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:layout_below="@+id/monCheckBox"
+                android:text="@string/tuesday"
+                android:textColor="#42311D"
+                android:typeface="serif" 
+                android:onClick="getCheckedItem"
+                />
+
+            <CheckBox
+                android:id="@+id/wedsCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tuesCheckBox"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/wednesday"
+                android:textColor="#42311D"
+                android:typeface="serif"
+                android:onClick="getCheckedItem"
+                 />
+
+            <CheckBox
+                android:id="@+id/thursCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wedsCheckBox"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/thursday"
+                android:textColor="#42311D"
+                android:typeface="serif" 
+                android:onClick="getCheckedItem"
+                />
+
+            <CheckBox
+                android:id="@+id/friCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/thursCheckBox"
+                android:layout_toRightOf="@+id/dayTextView"
+                android:text="@string/friday" 
+                android:textColor="#42311D"
+                android:typeface="serif"
+                android:onClick="getCheckedItem"
+                />
+            
+ </RelativeLayout> 
+            
+<!--    /***************** START TIME PROMPT ******************/    -->
+      
+      <RelativeLayout
+     	 android:id="@+id/startTimeLayout"
+       	 android:layout_width="match_parent"
+      	 android:layout_height="wrap_content"
+      	 android:layout_below="@id/dayLayout"
+      	 android:background="@drawable/boarders"
+      	 android:paddingBottom="10dp" 
+      	 android:paddingTop="10dp"
+      	 android:layout_margin="10dp" >
+            
+            <TextView
+                android:id="@+id/startTextView"
+                android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentTop="true"
+				android:paddingLeft="10dp"
+				android:text="@string/startPrompt"
+				android:textSize="20sp"
+				android:textColor="#42311D"
+				android:typeface="serif" />
+            
+            <TextView
+                android:id="@+id/startOutTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/startTextView"
+                android:layout_toRightOf="@id/startTextView"
+                android:paddingLeft="10dp"
+                android:textSize="20sp"
+                android:text=""
+                android:typeface="serif" />
+            
+            <Button
+                android:id="@+id/chStartTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/startTextView"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:typeface="serif"
+                android:textColor="#42311D"
+                android:background="@drawable/chtime_buttons"
+                style="@style/button_text"
+                android:text="@string/chStartTimePrompt" />
+    </RelativeLayout>
+<!-- 	/***************** END TIME PROMPT ********************/ -->
+
+	<RelativeLayout
+     	 android:id="@+id/endTimeLayout"
+       	 android:layout_width="match_parent"
+      	 android:layout_height="wrap_content"
+      	 android:layout_below="@id/startTimeLayout"
+      	 android:background="@drawable/boarders" 
+      	 android:paddingBottom="10dp"
+      	 android:paddingTop="10dp"
+      	 android:layout_margin="10dp" >
+
+			<TextView
+			    android:id="@+id/endTextView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentTop="true"
+			    android:layout_alignParentLeft="true"
+			    android:paddingLeft="10dp"
+			    android:text="@string/endPrompt"
+			    android:textSize="20sp"
+			    android:textColor="#42311D"
+			    android:typeface="serif" />
+			<TextView 
+			    android:id="@+id/endOutTextView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignBottom="@id/endTextView"
+			    android:layout_toRightOf="@id/endTextView"
+			    android:paddingLeft="10dp"
+			    android:textSize="20sp"
+			    android:text=""
+			    android:typeface="serif" />
+			<Button 
+			    android:id="@+id/chEndTimeButton"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@id/endTextView"
+			    android:gravity="center_horizontal"
+			    android:layout_centerHorizontal="true"
+			    android:typeface="serif"
+			    android:textColor="#42311D"
+                android:background="@drawable/chtime_buttons"
+                style="@style/button_text"
+			    android:text="@string/chEndTimePrompt" />
+
+   </RelativeLayout>         
+	<Button
+	    android:id="@+id/addClassButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/endTimeLayout"
+	    android:layout_alignParentLeft="true"
+	    android:typeface="serif"
+	    android:textColor="#42311D"
+	    android:onClick="addClass"
+	    android:text="@string/addClassPrompt" />
+
+	<Button
+	    android:id="@+id/submitButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/endTimeLayout"
+	    android:layout_alignParentRight="true"
+	    android:typeface="serif"
+	    android:textColor="#42311D"
+	    android:onClick="finishSchedule"
+	    android:text="Done"/>
+
+
+
+</RelativeLayout>
+</ScrollView>
